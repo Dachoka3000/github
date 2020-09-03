@@ -1,3 +1,11 @@
-#hums {
+.container-fluid {
     background-image: url(../../assets/images/homebg.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+h1 {
+    color: aqua;
+    justify-self: center;
+    text-align: center;
+    
 }
