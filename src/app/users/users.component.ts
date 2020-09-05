@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../search-service/search.service';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor( searchService: SearchService,private http:HttpClient) { }
 
   ngOnInit(): void {
   }
