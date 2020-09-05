@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search-service/search.service';
 import {User} from '../user-class/user';
 import {Repo} from '../repo-class/repo';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({

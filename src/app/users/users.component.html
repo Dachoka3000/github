@@ -1,4 +1,15 @@
 <div class="container-fluid">
-    <app-user-form></app-user-form>
+    <app-user-form (findUser)="userRequest($event)"></app-user-form>
+    <div class="container" *ngIf='user'>
+        <div style="margin-top: 10%;" class="panel panel-default">
+            <div class="panel-heading">
+                <h1>{{user.login}}</h1>
+            </div>
+
+
+        </div>
+
+
+    </div>
 </div>
 
