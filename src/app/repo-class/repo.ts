@@ -1,7 +1,8 @@
 export class Repo {
     constructor(
-        public name:any,
+        public name:string,
         public repos_url:any,
-        public description:any,
+        public description:string,
+        public html_url:any
     ){}
 }

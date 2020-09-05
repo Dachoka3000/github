@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search-service/search.service';
-import { HttpClient } from '@angular/common/http';
+import {User} from '../user-class/user';
+import {Repo} from '../repo-class/repo';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -9,10 +11,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  user:User;
+  repo: Repo;
 
-  constructor( searchService: SearchService,private http:HttpClient) { }
 
-  ngOnInit(): void {
+
+  constructor(public searchService: SearchService) {}
+  
+  userRequest(userName){
+    this.searchService.userRequest(userName).then((success)=>{
+      this.user= this.searchService.user;
+    },(error)=>{
+      console.log(error)
+    })
+    this.searchService.userRepos(userName).then(
+      (success)=>{
+        this.repo= this.searchService.myRepo;
+      },(error)=>{
+        console.log(error);
+      }
+    )
+  
+    
+  }
+  
+  
+
+  ngOnInit(){
+    this.userRequest("MachokaDaisy")
   }
 
 }

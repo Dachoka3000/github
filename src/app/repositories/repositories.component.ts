@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../search-service/search.service';
 
 @Component({
   selector: 'app-repositories',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepositoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(searchService:SearchService) { }
 
   ngOnInit(): void {
   }
