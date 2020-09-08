@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../search-service/search.service';
+import {Repo} from '../repo-class/repo';
+
 
 @Component({
   selector: 'app-repositories',
@@ -8,9 +10,19 @@ import {SearchService} from '../search-service/search.service';
 })
 export class RepositoriesComponent implements OnInit {
 
-  constructor(searchService:SearchService) { }
+  repo: Repo;
 
-  ngOnInit(): void {
+  constructor(public repService:SearchService) { }
+
+  repoRequest(userName){
+    this.repService.repoRequest(userName).then((success)=>{
+      this.repo= this.repService.newRepo;
+    },(error)=>{
+      console.log(error)
+    })
+  }
+  ngOnInit() {
+    this.repoRequest('MachokaDaisy')
   }
 
 }

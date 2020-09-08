@@ -1,1 +1,12 @@
-<p>repositories works!</p>
+<div class="container">
+    <app-user-form (findUser)="repoRequest($event)"></app-user-form>
+    <div class="panel-group">
+        <div class="panel panel-default" *ngFor="let x of repo">
+            <div class="panel-heading">{{x.owner.login}}</div>
+            <div class="panel-body">
+                <p>{{x.description}}</p>
+            </div>
+            <div class="panel-footer"><a href="{{x.html_url}}">View in Github</a></div>
+        </div>
+    </div>
+</div>

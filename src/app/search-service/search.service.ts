@@ -14,10 +14,11 @@ export class SearchService {
   repo: Repo;
   userName: any;
   myRepo: any;
+  newRepo: any;
 
   constructor(private http:HttpClient) { 
     this.user = new User("","","","","",0,0,"",new Date());
-    this.repo = new Repo ("","","","");
+    this.repo = new Repo ("",new Date(),"","");
   }
 
   userRequest(userName){
@@ -69,15 +70,20 @@ export class SearchService {
     return promise;
   }
 
-  // repoRequest(repoName){
-  //   interface ApiResponse{
-  //     name:string,
-  //     repos_url:any,
-  //     description:string,
-  //     html_url:any
-  //   }
-  //   let promise= new Promise((resolve,reject)=>{
-  //     this.http.get<ApiResponse>('https://api.github.com/search/repositories?q='+repoName+)
-  //   })
-  // }
+  repoRequest(userName){
+    interface ApiResponse{
+      items:any;
+    }
+    let promise= new Promise((resolve,reject)=>{
+      this.http.get<ApiResponse>('https://api.github.com/search/repositories?q='+ userName + '&per_page=10' + environment.apiKey).toPromise().then(myResponse=>{
+        this.newRepo= myResponse.items;
+
+
+        resolve();
+      }, error=>{
+        reject();
+      })
+    })
+    return promise;
+  }
 }
