@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SearchService } from './search-service/search.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DateCountPipe } from './date-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     RepositoriesComponent,
     UsersComponent,
     UserFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    DateCountPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

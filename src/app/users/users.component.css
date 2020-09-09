@@ -1,0 +1,20 @@
+.panel-body {
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: large;
+    border: 2px solid black;
+    padding-bottom: 3px;
+    margin: 2px;
+}
+.panel-heading {
+    text-align: center;
+    color: blue;
+    font-weight: bolder;
+    font-size: larger;
+    background-color: powderblue;
+    border: 1px solid whitesmoke;
+}
+.rep {
+    text-align: center;
+    
+}

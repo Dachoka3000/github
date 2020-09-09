@@ -8,7 +8,7 @@ export class HighlightDirective {
   constructor(private elem: ElementRef) { }
 
   @HostListener("click") onClicks(){
-    this.elem.nativeElement.style.color='yellow';
+    this.elem.nativeElement.style.color='purple';
   }
 
 }

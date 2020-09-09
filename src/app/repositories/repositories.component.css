@@ -1,0 +1,14 @@
+.panel-body{
+    border: 2px solid black;
+    padding-left: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.panel-heading{
+    border: 1px solid black;
+    background-color: powderblue;
+    text-align: center;
+}
+.panel-footer{
+    border: 1px solid black;
+    background-color: palegreen;
+}

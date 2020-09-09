@@ -21,10 +21,12 @@
                 </div>
 
             </div>
-            <h1>REPOSITORIES</h1>
+            <br>
+            <h1 class="rep">REPOSITORIES</h1>
+            <hr>
             <div class="panel-group">
               <div class="repoz" *ngFor="let r of repo">
-                <div class="panel panel-success">
+                <div class="panel panel-success" appHighlight>
                     <div class="panel-heading">
                       <h3>{{r.name}}</h3>
                     </div>

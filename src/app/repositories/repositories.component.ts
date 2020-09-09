@@ -22,7 +22,7 @@ export class RepositoriesComponent implements OnInit {
     })
   }
   ngOnInit() {
-    this.repoRequest('MachokaDaisy')
+    this.repoRequest('akan')
   }
 
 }

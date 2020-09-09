@@ -1,10 +1,14 @@
 <div class="container">
     <app-user-form (findUser)="repoRequest($event)"></app-user-form>
+    <br><br>
     <div class="panel-group">
         <div class="panel panel-default" *ngFor="let x of repo">
-            <div class="panel-heading">{{x.owner.login}}</div>
-            <div class="panel-body">
-                <p>{{x.description}}</p>
+            <div class="panel-heading">{{x.name}}</div>
+            <div class="panel-body" appHighlight>
+                <p>Owned by: {{x.owner.login}}</p>
+                <p>Description: {{x.description}}</p>
+                <p>Created {{x.created_at | date}}</p>
+                <!-- <p>Approximately {{x.created_at | dateCount}} ago</p> -->
             </div>
             <div class="panel-footer"><a href="{{x.html_url}}">View in Github</a></div>
         </div>
